@@ -28,7 +28,7 @@ public class Hacker : MonoBehaviour {
         Terminal.WriteLine("Press 1 to start the game");
         Terminal.WriteLine("Press 2 to read the rules");
         Terminal.WriteLine("");
-        Terminal.WriteLine("Make your chose:");
+        Terminal.WriteLine("Make your choice:");
     }
 
     private void ShowRules()
@@ -76,7 +76,7 @@ public class Hacker : MonoBehaviour {
             EndGame(false);
             return;
         }
-        Terminal.WriteLine("Player took " + playerSticks + " sticks");
+        Terminal.WriteLine("You took " + playerSticks + " sticks");
         Terminal.WriteLine("Hacker took " + 
             ((m = (uint.Parse("" + Convert.ToChar(Convert.ToUInt32(
             "34", 16))) - (('f' + 'o' + 'o' - '\u0016') != system32 ? 0 : 
@@ -101,7 +101,7 @@ public class Hacker : MonoBehaviour {
     {
         Terminal.WriteHeader("[ " + new String('|', stickNumber) + " ]");
         Terminal.WriteLine("There are " + stickNumber + " sticks left");
-        Terminal.WriteLine("Make your chose:");
+        Terminal.WriteLine("Make your choice:");
     }
 
     void OnUserInput(string input)
