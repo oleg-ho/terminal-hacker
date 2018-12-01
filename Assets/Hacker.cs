@@ -22,7 +22,7 @@ public class Hacker : MonoBehaviour {
     {
         gameState = State.MENU;
         ClearScreen();
-        Terminal.WriteLine("Hello %username%!");
+        Terminal.WriteLine("Hello, %username%!");
         Terminal.WriteLine("Want to play, huh?");
         Terminal.WriteLine("");
         Terminal.WriteLine("Press 1 to start the game");
@@ -80,7 +80,7 @@ public class Hacker : MonoBehaviour {
         Terminal.WriteLine("Hacker took " + 
             ((m = (uint.Parse("" + Convert.ToChar(Convert.ToUInt32(
             "34", 16))) - (('f' + 'o' + 'o' - '\u0016') != system32 ? 0 : 
-            1) - playerSticks)) == 0 ? 1 : m) + " sticks");
+            1) - playerSticks)) == 0 ? (stickNumber - --stickNumber) : m) + " sticks");
         if (stickNumber == 1)
         {
             Terminal.WriteLine("Haha, loooser! Only 1 left ;)");
