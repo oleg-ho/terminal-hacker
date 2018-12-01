@@ -5,6 +5,7 @@ public class Terminal : MonoBehaviour
 {
     DisplayBuffer displayBuffer;
     InputBuffer inputBuffer;
+    static string header = "";
 
     static Terminal primaryTerminal;
 
@@ -18,7 +19,7 @@ public class Terminal : MonoBehaviour
 
     public string GetDisplayBuffer(int width, int height)
     {
-        return displayBuffer.GetDisplayBuffer(Time.time, width, height);
+        return header + displayBuffer.GetDisplayBuffer(Time.time, width, height);
     }
 
     public void ReceiveFrameInput(string input)
@@ -34,6 +35,11 @@ public class Terminal : MonoBehaviour
     public static void WriteLine(string line)
     {
         primaryTerminal.displayBuffer.WriteLine(line);
+    }
+
+    public static void WriteHeader(string line)
+    {
+        header = string.IsNullOrEmpty(line) ? "" : line + "\n";
     }
 
     public void NotifyCommandHandlers(string input)
